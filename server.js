@@ -12,7 +12,7 @@ app.use(cors())
 const routes = require('./routes/api');
 
 
-mongoose.connect('mongodb://localhost/users', {
+mongoose.connect('mongodb+srv://Admin:123456aa@cluster0.kmmqy.mongodb.net/urls?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
