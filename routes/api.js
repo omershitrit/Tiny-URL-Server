@@ -4,7 +4,7 @@ const Url = require('../models/url.js');
 module.exports = router;
 
 router.use(function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "tiny-url-react.herokuapp/api/save.TLD"); // update to match the domain you will make the request from
+    res.header("Access-Control-Allow-Origin", "https://60450575bfc64839a91a665b--hungry-bassi-049edb.netlify.app/.TLD"); // update to match the domain you will make the request from
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
 });
