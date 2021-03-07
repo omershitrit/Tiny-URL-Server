@@ -9,7 +9,7 @@ var cors = require('cors')
 
 app.use(cors())
 
-const routes = require('../routes/api');
+const routes = require('./routes/api');
 
 
 mongoose.connect('mongodb://localhost/users', {
@@ -24,7 +24,7 @@ mongoose.connection.on('connected', () => {
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use('/', require('../routes/api'));
+app.use('/', require('./routes/api'));
 app.use('/api', routes);
 
 app.listen(PORT, console.log(`Server is starting at ${PORT}`));
