@@ -12,7 +12,7 @@ app.use(cors())
 const routes = require('./routes/api');
 
 
-mongoose.connect('mongodb+srv://Admin:123456aa@cluster0.kmmqy.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://Admin:123456aa@cluster0.kmmqy.mongodb.net/users?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
