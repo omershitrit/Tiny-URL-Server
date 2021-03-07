@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const app = express();
 require('dotenv').config();
 
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 
 var cors = require('cors')
 
@@ -27,4 +27,4 @@ app.use(express.urlencoded({ extended: false }));
 app.use('/', require('./routes/api'));
 app.use('/api', routes);
 
-app.listen(process.env.PORT || PORT, console.log(`Server is starting at ${PORT}`));
+app.listen(PORT, console.log(`Server is starting at ${PORT}`));
