@@ -82,7 +82,7 @@ router.post('/save', (req, res) => {
                 res.status(500).json({ msg: 'Sorry, internal server errors' });
                 return;
             }
-            res.status(200).json('http://localhost:8080/' + data.value);
+            res.status(200).json(window.location.href + data.value);
         });
     })
 
