@@ -3,6 +3,12 @@ const router = express.Router();
 const Url = require('../models/url.js');
 module.exports = router;
 
+router.use(function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "tiny-url-react.herokuapp/api/save.TLD"); // update to match the domain you will make the request from
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
 router.get('/', (req, res) => {
     Url.find({})
         .then((data) => {
@@ -82,7 +88,7 @@ router.post('/save', (req, res) => {
                 res.status(500).json({ msg: 'Sorry, internal server errors' });
                 return;
             }
-            res.status(200).json(window.location.href + data.value);
+            res.status(200).json('https://tiny-url-react.herokuapp.com/' + data.value);
         });
     })
 
